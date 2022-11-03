@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,5 +30,10 @@ public class Pessoa {
   @Temporal(TemporalType.TIMESTAMP)
   private Date dataCriacao;
   @Temporal(TemporalType.TIMESTAMP)
-  private Date dataAtualizacao;  
+  private Date dataAtualizacao;
+  
+  @ManyToOne
+  @JoinColumn(name="idCidade")
+  private Cidade cidade;
+  
 }
